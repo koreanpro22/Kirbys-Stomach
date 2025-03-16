@@ -12,7 +12,7 @@ type Ingredient = {
 export default async function() {
     
     const items = await getAllIngredients();
-    console.log(items)
+    // console.log(items)
     return <div>
         <h1>Pantry</h1>
         {items?.map((item: Ingredient, idx: number) => {

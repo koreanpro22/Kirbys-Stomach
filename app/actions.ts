@@ -19,9 +19,9 @@ export const signOutAction = async () => {
 
 export const signInWithGoogleAuthAction = async () => {
   const supabase = await createClient();
-  const origin = (await headers()).get("origin");
-  // const origin = process.env.NEXT_PUBLIC_SITE_URL;
+  const origin = process.env.NEXT_PUBLIC_SITE_URL;
 
+  console.log("Origin => ", origin)
 
   const { data, error } = await supabase.auth.signInWithOAuth({
     provider: "google",
