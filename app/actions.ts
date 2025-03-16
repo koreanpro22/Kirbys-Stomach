@@ -19,13 +19,14 @@ export const signOutAction = async () => {
 
 export const signInWithGoogleAuthAction = async () => {
   const supabase = await createClient();
-  const origin = (await headers()).get("origin");
+  // const origin = (await headers()).get("origin");
+  const origin = process.env.NEXT_PUBLIC_SITE_URL;
 
 
   const { data, error } = await supabase.auth.signInWithOAuth({
     provider: "google",
     options: {
-      redirectTo: `${origin}/auth/callback`
+      redirectTo: `${origin}/auth/v1/callback`
     }
   })
 
