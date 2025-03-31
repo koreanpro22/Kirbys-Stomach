@@ -1,3 +1,5 @@
+"use server"
+
 import { createClient } from "@/utils/supabase/server";
 
 export async function getAllIngredients() {
@@ -14,3 +16,9 @@ export async function getAllIngredients() {
 
   return data;
 }
+
+// export async function createIngredient() {
+//   const supabase = await createClient();
+
+//   const { data, error } = await supabase.from('Ingredients').insert()
+// }
